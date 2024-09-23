@@ -53,9 +53,9 @@ function mostrarDataContrib(data){
 
 
 function borrarFormulario() {
-  const form = document.getElementById("form");
-  form.reset();
-
+  // const form = document.getElementById("form");
+  // form.reset();
+  window.location.href = "http://127.0.0.1:5500/index.html";
   //MEJORAR esta funcion para borrar todos los input.
 }
 

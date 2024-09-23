@@ -2,6 +2,9 @@ import { Router } from "express";
 import {listar, cargar, editar, buscarContribuyente, buscarCuil} from '../controller/autoControllers.js'
 
 const router = Router();
+router.get('/ping', (req, res) => {
+  res.send('PONG');
+})
 
 router.get('/listar', listar);
 router.post('/cargar/', cargar);

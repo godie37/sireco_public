@@ -33,17 +33,3 @@ app.listen(process.env.PORT, ()=> {
     console.log(`Server connected on port ${process.env.PORT}`)
     console.log(`   ***  _____________ ***`)
 })
-
-
-
-
-// async function listar() {
-//     try {
-//         const query = `SELECT * FROM contribuyentes`
-//         const [result] = await pool.query(query)
-//         console.log('RESULT---> ',result[0])
-//     } catch (error) {
-//         console.log('ERROr----> ', error)
-//     }
-// }
-// listar()
