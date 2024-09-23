@@ -1,0 +1,35 @@
+.tittle{
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 25px;
+}
+.flexContainer {
+  margin-left: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.flexContainer div {
+   width: 400px;
+    height: 100px;
+    margin: 5px;
+}
+
+.tittleLebel{
+  margin-left: 5px;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: x-large;
+}
+.form-control {
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: large;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBox Rod</title>
+    <link rel="stylesheet" href="./css/checkRod.css" />
+  </head>
+  <body>
+    <!-- CheckBox Rodados -->
+   <section>
+      <div class="containerRod">
+        <label class="tittleRod" id="tittleRodado ">Rodados</label>
+        <input class="tittleRod" id="checkRodado" type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"/>
+        <div class="inputRod" id="rodados" style="display: none">
+          <div class="inputRodChild">
+            <label id="nroRodado ">Patente:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="nroRodado"
+              name="nroRodado"
+            />
+            <label id="recursoIdRod">Recurso:</label>
+            <select class="form-control" id="recursoIdRod" name="recursoIdRod" required>
+              <option value="1">AUTO</option>
+              <option value="2">MOTO</option>
+            </select>
+          </div>
+          <div id="newRod"></div>
+          <br />
+          <button
+            type="submit"
+            class="buttonPlas"
+            id="buttonPlasRod"
+            name="buttonPlasRod"
+            value="buttonPlasRod"
+          >
+            +
+          </button>
+          <button
+            type="submit"
+            class="buttonLess"
+            id="buttonLessRod"
+            name="buttonLessRod"
+            value="buttonLessRod"
+          >
+            -
+          </button>
+          <hr />
+        </div>
+      </div>
+  </section>
+    <script src="./js/checkRod.js"></script>
+  </body>
+</html>

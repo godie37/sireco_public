@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBox Comer</title>
+    <link rel="stylesheet" href="./css/checkRod.css" />
+  </head>
+  <body>
+    <!-- CheckBox Rodados -->
+    <section>
+      <div class="containerInm">
+        <label class="tittleInm" id="tittleComercio ">Comercios</label>
+        <input class="checkInm" id="checkComercios" type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"/>
+        <div class="inputInm" id="comercios" style="display: none">
+          <div class="inputInmChild">
+            <label id="nroInmueble ">Nro comercio:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="nroInmueble"
+              name="nroInmueble"
+            />
+           
+          </div>
+          <div id="newComer"></div>
+          <br />
+          <button
+            type="submit"
+            class="buttonPlas"
+            id="buttonPlasComer"
+            name="buttonPlas"
+            value="buttonPlas"
+          >
+            +
+          </button>
+          <button
+            type="submit"
+            class="buttonLess"
+            id="buttonLessComer"
+            name="buttonLess"
+            value="buttonLess"
+          >
+            -
+          </button>
+          <hr />
+        </div>
+      </div>
+    </section>
+    <script src="./js/checkComer.js"></script>
+  </body>
+</html>

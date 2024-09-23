@@ -1,0 +1,33 @@
+.containerInm{
+  margin: 5px;
+  padding: 5px;
+}
+
+.tittleInm, .checkInm{
+  margin: 5px;
+  padding: 5px;
+  font-size: larger;
+  font-weight: 900;
+}
+
+.inputInm, .inputInmChild{
+  margin-left: 5px;
+  margin-right: 10px;
+  padding: 20px;
+  font-size: large;
+}
+.form-control {
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: large;
+}
+.buttonPlas, .buttonLess{
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 5px 20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBox Inm</title>
+    <link rel="stylesheet" href="./css/checkInm.css" />
+  </head>
+  <body>
+    <!-- CheckBox Inmuebles -->
+    <div class="containerInm">
+      <label class="tittleInm" id="nroInmueble ">Inmuebles</label>
+      <input
+        class="checkInm"
+        id="toggleSwitch"
+        type="checkbox"
+        data-toggle="toggle"
+        data-onstyle="danger"
+        data-offstyle="success"
+      />
+      <div class="inputInm" id="inmuebles" style="display: none">
+        <div class="inputInmChild">
+          <label id="nroInmueble ">Nro. Inmueble:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="nroInmueble"
+            name="nroInmueble"
+          />
+          <label id="recursoId">Recurso:</label>
+          <select class="form-control" id="recursoId" name="recursoId" required>
+            <option value="1">ABL</option>
+            <option value="2">RURAL</option>
+          </select>
+        </div>
+        <div id="newInm"></div>
+        <br />
+        <button
+          type="submit"
+          class="buttonPlas"
+          id="buttonPlas"
+          name="buttonPlas"
+          value="buttonPlas"
+        >
+          +
+        </button>
+        <button
+          type="submit"
+          class="buttonLess"
+          id="buttonLess"
+          name="buttonLess"
+          value="buttonLess"
+        >
+          -
+        </button>
+        <hr />
+      </div>
+    </div>
+
+    <script src="./js/checkInm.js"></script>
+  </body>
+</html>

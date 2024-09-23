@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckBox Cementerio</title>
+    <link rel="stylesheet" href="./css/checkBox.css" />
+  </head>
+  <body>
+    <!-- CheckBox Rodados -->
+    <section>
+      <div class="containerCement">
+        <label class="tittleCement" id="tittleCementerios ">Cementerio</label>
+        <input class="tittleCement" id="checkCementerios" type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"/>
+        <div class="inputCement" id="cementerios" style="display: none">
+          <div class="inputCementChild">
+            <label>Nro cuenta:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="nroCuenta"
+              name="nroCuenta"
+            />
+           
+          </div>
+          <div id="newCement"></div>
+          <br />
+          <button
+            type="submit"
+            class="buttonPlas"
+            id="buttonPlasCement"
+            name="buttonPlasCement"
+            value="buttonPlasCement"
+          >
+            +
+          </button>
+          <button
+            type="submit"
+            class="buttonLess"
+            id="buttonLessCement"
+            name="buttonLessCement"
+            value="buttonLessCement"
+          >
+            -
+          </button>
+          <hr />
+        </div>
+      </div>
+    </section>
+    <script src="./js/checkCement.js"></script>
+  </body>
+</html>
