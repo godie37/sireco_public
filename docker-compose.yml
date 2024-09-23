@@ -1,11 +1,18 @@
-version: '3.8'
 services:
-  sireco:
-    build: .
+  sireco-back:
+    build:
+      context: "./Sireco Back"
+      dockerfile: './dockerfile'
     ports:
       - '3000:3000'
     links:
       - db
+  sireco-front:
+    build:
+      context: "./Sireco Front"
+      dockerfile: './dockerfile'
+    ports:
+      - '5500:5500'
   db:
     image: mysql
     restart: always
@@ -29,3 +36,11 @@ services:
 # Names our volume
 volumes:
   my-db:
+
+
+
+  # services:
+  # service-name:
+  #   build:
+  #     context: ../app
+  #     dockerfile: ../docker/Dockerfile

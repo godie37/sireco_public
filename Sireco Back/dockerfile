@@ -1,5 +1,5 @@
 FROM node
-WORKDIR /app
+WORKDIR /sirecoback
 COPY /src .
 RUN npm install
 EXPOSE 3000
