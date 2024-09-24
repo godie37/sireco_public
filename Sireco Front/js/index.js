@@ -208,18 +208,22 @@ button.addEventListener("click", async (event) => {
     if (response.status == 200) {
       alert("Contribuyente existente. Se mostraran sus datos a continuacion.");
       mostrarDataContrib(responseData)
-      borrarFormulario();
+      // borrarFormulario();
     } else {
       alert("Contribuyente creado.");
       borrarFormulario();
     }
     
+
   } catch (error) {
     console.error("Error al crear el contribuyente:", error);
     alert("Hubo un error al crear el contribuyente.");
   }
 });
 //#endregion
+
+
+
 
 
 
