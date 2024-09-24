@@ -12,7 +12,7 @@ services:
       context: "./Sireco Front"
       dockerfile: './dockerfile'
     ports:
-      - '5500:80'
+      - '80:80'
   db:
     image: mysql
     restart: always

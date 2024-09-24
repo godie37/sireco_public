@@ -1,3 +1,20 @@
+FROM nginx:stable
+
+# Copiar la configuración personalizada de Nginx
+COPY sireco.conf /etc/nginx/conf.d/sireco.conf
+
+# Copiar los archivos HTML, CSS y JS al directorio de Nginx
+COPY index.html /usr/share/nginx/html/
+COPY js/ /usr/share/nginx/html/js/
+COPY css/ /usr/share/nginx/html/css/
+
+# Exponer el puerto 80 para acceder al sitio
+EXPOSE 80
+
+# Comando para mantener Nginx ejecutándose en primer plano
+CMD ["nginx", "-g", "daemon off;"]
+
+
 # # We don't want to start from scratch.
 # # That is why we tell node here to use the current node image as base.
 # FROM node:alpine3.11
@@ -77,20 +94,3 @@
 # EXPOSE 80
 # # Start Nginx when the container starts
 # CMD ["nginx", "-g", "daemon off;"]
-
-
-FROM nginx:stable
-
-# Copiar la configuración personalizada de Nginx
-COPY sireco.conf /etc/nginx/conf.d/sireco.conf
-
-# Copiar los archivos HTML, CSS y JS al directorio de Nginx
-COPY index.html /usr/share/nginx/html/
-COPY js/ /usr/share/nginx/html/js/
-COPY css/ /usr/share/nginx/html/css/
-
-# Exponer el puerto 80 para acceder al sitio
-EXPOSE 80
-
-# Comando para mantener Nginx ejecutándose en primer plano
-CMD ["nginx", "-g", "daemon off;"]
