@@ -23,7 +23,7 @@ services:
       # You can use whatever password you like
       MYSQL_PASSWORD: '1235'
       # Password for root access
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'Mar.chiquit4!'
     ports:
       # <Port exposed> : <MySQL Port running inside container>
       - '3306:3306'
@@ -32,15 +32,14 @@ services:
       - '3306'
       # Where our data will be persisted
     volumes:
-      - my-db:/var/lib/mysql
+      - mydb-sireco:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
 # Names our volume
 volumes:
-  my-db:
-
-
-
-  # services:
-  # service-name:
-  #   build:
-  #     context: ../app
-  #     dockerfile: ../docker/Dockerfile
+  mydb-sireco:
