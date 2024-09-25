@@ -58,7 +58,6 @@ function borrarFormulario() {
 }
 
 function validEmail(email) {
-  console.log("email---> ", email)
   const val =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/i;
   const result = val.test(email)
   //console.log("caracteres validos------> ", result);

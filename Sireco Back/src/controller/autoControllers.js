@@ -125,7 +125,7 @@ const cargar = async (req, res) => {
       } else {
         const datos = await buscarContribuyente(contribuyente.cuil);
         
-        console.log("DATO_____--> ",datos);   ///  OK
+        //console.log("DATO_____--> ",datos);   ///  OK
         //console.log("HASTA ACA VOY BIEN!!!----> PASO A filtrarDatos ");   ///  OK
         const responseFiltData = await filtrarDatos(data, datos.NRO_CONTRIB);
         console.log("DATO_CONTRIB-------> ",datos.NRO_CONTRIB);   ///  OK
