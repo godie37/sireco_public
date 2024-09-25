@@ -214,18 +214,18 @@ button.addEventListener("click", async (event) => {
       body: JSON.stringify(user),
     });
     const responseData = await response.json();
+    
+    if (response.status == 200) {
+      alert("Contribuyente existente. Se mostraran sus datos a continuacion.");
+      mostrarDataContrib(responseData);
+      // borrarFormulario();
+    } else {
+      alert("Contribuyente creado.");
+      borrarFormulario();
+    }
   } catch (error) {
     console.error("Error al crear el contribuyente:", error);
     alert("Hubo un error al crear el contribuyente.");
-  }
-
-  if (response.status == 200) {
-    alert("Contribuyente existente. Se mostraran sus datos a continuacion.");
-    mostrarDataContrib(responseData);
-    // borrarFormulario();
-  } else {
-    alert("Contribuyente creado.");
-    borrarFormulario();
   }
 } else {
    alert("Email invalido");
