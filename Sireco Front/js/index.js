@@ -50,13 +50,21 @@ function mostrarDataContrib(data){
   contenedorContribuyente.appendChild(fila);
 }
 
-
-
 function borrarFormulario() {
   // const form = document.getElementById("form");
   // form.reset();
-  window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href = "http://localhost/";
   //MEJORAR esta funcion para borrar todos los input.
+}
+
+function validEmail(email) {
+  console.log("email---> ", email)
+  const val =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/i;
+  const result = val.test(email)
+  //console.log("caracteres validos------> ", result);
+  return result
+  
+  
 }
 
 //#region // ************     Buscar CONTRIBUYENTE.    ************ - OK!!! -
@@ -65,7 +73,7 @@ const buttonBuscarDni = document.getElementById("buscarDni");
 buttonBuscarDni.addEventListener("click", async () => {
   
   const dni = document.getElementById("dni").value;
-  console.log("DNI en el FRONT:------------> ", dni);
+  //console.log("DNI en el FRONT:------------> ", dni);
   try {
 
     const response = await fetch(`http://localhost:3000/buscar/${dni}`, {
@@ -111,6 +119,7 @@ button.addEventListener("click", async (event) => {
     cementerio: [],
   };
 
+  
   // Verificar si INMUEBLES esta chequeado y capturar los datos
   if (inm.style.display !== "none") {
     const inputInmChildren = document
@@ -194,7 +203,8 @@ button.addEventListener("click", async (event) => {
   }
   
   // Envio de datos al server.
-  try {
+ if (validEmail(user.EMAIL)) {
+   try {
     const response = await fetch("http://localhost:3000/cargar", {
       method: "POST",
       headers: {
@@ -204,21 +214,26 @@ button.addEventListener("click", async (event) => {
       body: JSON.stringify(user),
     });
     const responseData = await response.json();
-    
-    if (response.status == 200) {
-      alert("Contribuyente existente. Se mostraran sus datos a continuacion.");
-      mostrarDataContrib(responseData)
-      // borrarFormulario();
-    } else {
-      alert("Contribuyente creado.");
-      borrarFormulario();
-    }
-    
-
   } catch (error) {
     console.error("Error al crear el contribuyente:", error);
     alert("Hubo un error al crear el contribuyente.");
   }
+
+  if (response.status == 200) {
+    alert("Contribuyente existente. Se mostraran sus datos a continuacion.");
+    mostrarDataContrib(responseData);
+    // borrarFormulario();
+  } else {
+    alert("Contribuyente creado.");
+    borrarFormulario();
+  }
+} else {
+   alert("Email invalido");
+   limpiarInput("email");
+  
+ }
+    
+
 });
 //#endregion
 
