@@ -130,11 +130,11 @@ const cargar = async (req, res) => {
         const responseFiltData = await filtrarDatos(data, datos.NRO_CONTRIB);
         console.log("DATO_CONTRIB-------> ",datos.NRO_CONTRIB);   ///  OK
         // console.log("<--- RESPONSE FILTRAR DATOS --->", responseFiltData.code);
-        res
-          .status(201)
-          .json({ estado: "success", mensaje: "Contribuyente cargado." });
       }
     }
+    res
+      .status(201)
+      .json({ estado: "success", mensaje: "Contribuyente cargado." });
   } catch (error) {
     console.log("ERROR en CARGAR----> ", error);
   }
