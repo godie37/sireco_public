@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   sireco-back:
     build:
@@ -5,41 +6,28 @@ services:
       dockerfile: './dockerfile'
     ports:
       - '3000:3000'
-    links:
-      - db
+
   sireco-front:
     build:
       context: "./Sireco Front"
       dockerfile: './dockerfile'
     ports:
       - '80:80'
+
   db:
     image: mysql
     restart: always
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - mydb-sireco:/var/lib/mysql
     environment:
       MYSQL_DATABASE: 'sirecodb'
-      # So you don't have to use root, but you can if you like
       MYSQL_USER: 'remote'
-      # You can use whatever password you like
       MYSQL_PASSWORD: '1235'
-      # Password for root access
       MYSQL_ROOT_PASSWORD: 'Mar.chiquit4!'
     ports:
-      # <Port exposed> : <MySQL Port running inside container>
       - '3306:3306'
     expose:
-      # Opens port 3306 on the container
       - '3306'
-      # Where our data will be persisted
-    volumes:
-      - mydb-sireco:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      - PMA_ARBITRARY=1
-# Names our volume
 volumes:
   mydb-sireco:
