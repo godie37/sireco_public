@@ -123,19 +123,18 @@ const cargar = async (req, res) => {
           mensaje: "No se pudo crear el nuevo contribuyente.",
         });
       } else {
+        const datos = await buscarContribuyente(contribuyente.cuil);
+        
+        console.log("DATO_____--> ",datos);   ///  OK
+        //console.log("HASTA ACA VOY BIEN!!!----> PASO A filtrarDatos ");   ///  OK
+        const responseFiltData = await filtrarDatos(data, datos.NRO_CONTRIB);
+        console.log("DATO_CONTRIB-------> ",datos.NRO_CONTRIB);   ///  OK
+        // console.log("<--- RESPONSE FILTRAR DATOS --->", responseFiltData.code);
         res
           .status(201)
           .json({ estado: "success", mensaje: "Contribuyente cargado." });
-          const datos = await buscarContribuyente(contribuyente.cuil);
-
-          //console.log("DATA_____--> ",datos);   ///  OK
-          //console.log("HASTA ACA VOY BIEN!!!----> PASO A filtrarDatos ");   ///  OK
-         const responseFiltData = await filtrarDatos(data, datos.NRO_CONTRIB);
-         console.log("<--- RESPONSE FILTRAR DATOS --->", responseFiltData.code);
       }
     }
-
-
   } catch (error) {
     console.log("ERROR en CARGAR----> ", error);
   }
