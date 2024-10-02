@@ -1,0 +1,26 @@
+{
+  "name": "sireco_back",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon run"
+  },
+  "keywords": [],
+  "author": "Diego Alejandro Diaz",
+  "license": "ISC",
+  "description": "Sistema de relevamiento del contribuyente",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

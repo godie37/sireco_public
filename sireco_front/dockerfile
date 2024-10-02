@@ -1,0 +1,16 @@
+# front Dockerfile
+# Usamos una imagen de Nginx
+FROM nginx
+
+# Copiar los archivos del frontend al directorio de Nginx
+COPY . /usr/share/nginx/html
+
+# Copiar la configuración personalizada de Nginx
+COPY sireco.conf /etc/nginx/conf.d/sireco.conf
+
+# # Exponer el puerto 80 para acceder al sitio
+EXPOSE 80
+
+
+# # Comando para mantener Nginx ejecutándose en primer plano
+CMD ["nginx", "-g", "daemon off;"]
