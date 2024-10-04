@@ -7,10 +7,10 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - DB_HOST=db
-      - DB_USER=remote
-      - DB_PASSWORD=6Efj3m7jO0GAtd8k
+      - DB_USER=remoto
+      - DB_PASSWORD=password
       - DB_NAME=sirecodb
-      - DB_ROOT_PASSWORD=Marchiquit4
+      - DB_ROOT_PASSWORD=rootpassword
     ports:
       - "3000:3000"
     depends_on:
@@ -28,7 +28,7 @@ services:
   db:
     image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: Marchiquit4
+      MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: sirecodb
     ports:
       - "3306:3306"
@@ -40,7 +40,7 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: Marchiquit4
+      MYSQL_ROOT_PASSWORD: rootpassword
     ports:
       - "8081:80"
     depends_on:

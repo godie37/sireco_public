@@ -1,3 +1,5 @@
 # sireco
-* Cambiar la ruta de cada fetch en "index.js" por la ip de la red en la que ejecute la aplicacion.
-* Una vez ejecutado el comando "docker compose up", entra a phpmyadmin como root, crear el usaurio "remote" con la pass "6Efj3m7jO0GAtd8k" y asignarle los permisos correspondientes.
+Sistema de relevamiento al contribuyente.
+Es una pagina web simple desarrollada en html, css, javascript y mysql.
+Se puede realizar una busqueda en la base de datos por medio del dni y completar el formulario con los datos del contribuyente en caso de que aun no fue cargado para que queden guardados en la base de datos. Junto a sus datos se puede guardar de forma relacionada, el/los inmuebles, rodados (auto y moto) o comercios que éste posea.
+El sistema se encuentra dockerizado, listo para correr el comando docker compose up.
