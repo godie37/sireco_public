@@ -2375,7 +2375,6 @@ const municipiosPorProvincia = {
       "ALDERETES",
       "GRANEROS",
     ],
-    // Agrega más provincias y sus municipios
   };
   
  // Elementos select en el DOM
@@ -2406,39 +2405,3 @@ const municipiosPorProvincia = {
    }
       
  });
- 
-
-
-
-
-//   // Elementos select en el DOM
-//   const selectProvincia = document.getElementById("provincia");
-//   const selectMunicipio = document.getElementById("municipio");
-  
-//   // Evento al cambiar de provincia
-//   selectProvincia.addEventListener("change", function () {
-//     const provinciaSeleccionada = selectProvincia.value;
-  
-//     // Limpiar el select de municipios
-//     selectMunicipio.innerHTML =
-//       '<option value="">Seleccione un municipio</option>';
-  
-//     // Si se selecciona una provincia, cargar los municipios correspondientes
-//     if (provinciaSeleccionada && municipiosPorProvincia[provinciaSeleccionada]) {
-//       selectMunicipio.disabled = false;
-  
-//       // Rellenar el select de municipios
-//       municipiosPorProvincia[provinciaSeleccionada].forEach((municipio) => {
-//         const option = document.createElement("option");
-//         option.value = municipio;
-//         option.textContent = municipio;
-//         selectMunicipio.appendChild(option);
-//       });
-//     } else {
-//       selectMunicipio.disabled = true; // Deshabilitar si no hay provincia seleccionada o si no hay municipios
-//     }
-//     console.log(selectProvincia.value)
-//     console.log(selectMunicipio.value)
-    
-//   });
-  
