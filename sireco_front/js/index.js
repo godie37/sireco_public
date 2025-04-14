@@ -2374,7 +2374,6 @@ const municipiosPorProvincia = {
     "ALDERETES",
     "GRANEROS",
   ],
-  // Agrega más provincias y sus municipios
 };
 
 function limpiarInput(miInput) {
@@ -2507,22 +2506,11 @@ const selectProvincia = document.getElementById("provincia");
  });
 //#endregion
 
-
-
-
-
-
-
-
-
-
 //#region // ************     Datos CONTRIBUYENTE.    ************     - OK -
 const button = document.getElementById("sendContrib");
 
 button.addEventListener("click", async (event) => {
   event.preventDefault();
-
-  
 
   let user = {
     CUIL: document.getElementById("newCuil").value,
@@ -2658,58 +2646,3 @@ button.addEventListener("click", async (event) => {
 
 });
 //#endregion
-
-
-
-
-
-
-
-// // ************     Listar usuarios.    ************     - Terminar de adaptar a Contribuyentes.
-// async function listarContribuyente() {
-//   try {
-//     const response = await fetch("http://localhost:3000/listar");
-//     const datos = await response.json();
-
-//     const contrib = datos.body;
-//     const contenedorContrib = document.querySelector("#contrib tbody"); // Selecciona el cuerpo de la tabla
-
-//     contenedorUsuarios.innerHTML = ""; // Limpia el contenido existente
-
-//     usuarios.forEach((usuario) => {
-//       const fila = document.createElement("tr"); // Crea una fila de la tabla
-
-//       const celdaId = document.createElement("td");
-//       celdaId.textContent = usuario.id;
-//       fila.appendChild(celdaId);
-
-//       const celdaNombre = document.createElement("td");
-//       celdaNombre.textContent = usuario.nombre;
-//       fila.appendChild(celdaNombre);
-
-//       const celdaApell = document.createElement('td');
-//       celdaApell.textContent = usuario.apellido;
-//       fila.appendChild(celdaApell);
-
-//       const celdaNomApell = document.createElement('td');
-//       celdaNomApell.textContent = usuario.nombre_completo;
-//       fila.appendChild(celdaNomApell);
-
-//       const celdaUsername = document.createElement('td');
-//       celdaUsername.textContent = usuario.username;
-//       fila.appendChild(celdaUsername);
-
-//       const celdaEmail = document.createElement('td');
-//       celdaEmail.textContent = usuario.email;
-//       fila.appendChild(celdaEmail);
-
-//       const celdaRol = document.createElement('td');
-//       celdaRol.textContent = usuario.rol_id;
-//       fila.appendChild(celdaRol);
-
-//       contenedorUsuarios.appendChild(fila); // Agrega la fila al cuerpo de la tabla
-//     });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
